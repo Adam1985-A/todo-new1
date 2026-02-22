@@ -12,12 +12,12 @@
     "types": [],
     "esModuleInterop": true,
      "experimentalDecorators": true,
-    "emitDecoratorMetadata": true,
      "strictNullChecks": true,
+      "emitDecoratorMetadata": false,
     "exactOptionalPropertyTypes": true,
      "moduleResolution": "node",
   
-
+    
     // For nodejs:
     // "lib": ["esnext"],
     // "types": ["node"],

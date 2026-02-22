@@ -47,7 +47,7 @@
     "strictPropertyInitialization": false,
     "jsx": "react-jsx",
     "verbatimModuleSyntax": false,
-    "isolatedModules": true,
+    "isolatedModules": false,
     "noUncheckedSideEffectImports": true,
     "moduleDetection": "force",
     "forceConsistentCasingInFileNames": true,

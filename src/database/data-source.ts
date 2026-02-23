@@ -14,11 +14,12 @@ if(!databaseUrl){
 export const AppDataSource = new DataSource({
   type: "postgres",
   url: databaseUrl,
-  synchronize: process.env.NODE_ENV !== "production",
+  synchronize: true,
   logging: false,
-  ssl: process.env.NODE_ENV === "production" 
-  ? { rejectUnauthorized: false } 
-  : false,
+  ssl: databaseUrl.includes("render.com")
+   ? { rejectUnauthorized: false }
+   : false,
+
   entities: [
     process.env.NODE_ENV === "production"
     ? "dist/entity/*.js"
@@ -27,6 +28,7 @@ export const AppDataSource = new DataSource({
   migrations: [],
   subscribers: [],
 });
+
 
 
 export default AppDataSource;

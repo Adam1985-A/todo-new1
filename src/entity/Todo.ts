@@ -1,5 +1,8 @@
 import { Entity, PrimaryGeneratedColumn, Column, ManyToOne } from "typeorm";
 import { User } from "../entity/User.js";
+import { Relation } from "typeorm";
+
+
 
 @Entity()
 export class Todo {
@@ -20,7 +23,6 @@ export class Todo {
 
   @Column({ type: "timestamp", default: () => "CURRENT_TIMESTAMP", onUpdate: "CURRENT_TIMESTAMP" })
   updatedAt!: Date;
-
-  @ManyToOne(() => User, user => user.todos)
-  user!: User;
+@ManyToOne(() => User, user => user.todos)
+  user!: Relation<User>;
 }

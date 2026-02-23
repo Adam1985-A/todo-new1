@@ -5,6 +5,7 @@ import {
   OneToMany,
 } from "typeorm";
 import { Todo } from "../entity/Todo.js";
+import { Relation } from "typeorm";
 
 @Entity()
 export class User {
@@ -24,5 +25,5 @@ export class User {
   updatedAt!: Date;
 
   @OneToMany(() => Todo, todo => todo.user)
-  todos!: Todo[];
+  todos!: Relation<Todo[]>;
 }
